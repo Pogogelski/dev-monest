@@ -157,11 +157,3 @@ src/
 npm test        # serviço (failover, round-robin, 404 x 503) e providers
 npm run test:e2e  # a API de ponta a ponta, com fetch mockado
 ```
-
-## O que eu deixaria para depois
-
-- **Circuit breaker**: hoje, se uma API está fora, toda requisição ainda gasta
-  2,5s tentando antes do failover. Um breaker faria falhar rápido.
-- **Cache**: CEP quase não muda; um cache curto tiraria carga das APIs e serviria
-  de resposta quando as duas estiverem fora.
-- **Métricas** (Prometheus) além dos logs, para alarme por taxa de erro por provider.
